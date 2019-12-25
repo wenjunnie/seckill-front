@@ -1,2 +1,4 @@
 # seckill-front
-秒杀项目前端
+学习做个秒杀系统
+
+后端页面见：https://github.com/wenjunnie/seckill
