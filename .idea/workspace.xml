@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ea2f1724-6439-4b36-97c8-0faeca8b2d46" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1VSnFnGnApRAMTP9o7ORbEFhEMm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hello" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JetBrains\WebstormProjects\seckill-front" />
+      <recent name="D:\JetBrains\WebstormProjects\seckill-front\static" />
+      <recent name="D:\JetBrains\WebstormProjects\seckill-front\html" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JetBrains\WebstormProjects\seckill-front\static" />
+      <recent name="D:\JetBrains\WebstormProjects\seckill-front\html" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.getotp.html">
+    <configuration name="getotp.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/seckill-front/getotp.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="listitem.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/seckill-front/listitem.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.getotp.html" />
+        <item itemvalue="JavaScript Debug.listitem.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ea2f1724-6439-4b36-97c8-0faeca8b2d46" name="Default Changelist" comment="" />
+      <created>1577255262253</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577255262253</updated>
+      <workItem from="1577255264897" duration="2138000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="548" y="167" key="FileChooserDialogImpl" timestamp="1577255863918">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1577255863918" />
+  </component>
+</project>
