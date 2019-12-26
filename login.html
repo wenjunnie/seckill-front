@@ -59,6 +59,8 @@
                 success:function (data) {
                     if (data.status === "success") {
                         alert("登录成功");
+                        var token = data.data;
+                        window.localStorage["token"] = token;
                         window.location.href="listitem.html";
                     }else {
                         alert("登录失败，原因是"+data.data.errMsg);
