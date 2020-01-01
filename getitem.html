@@ -63,6 +63,13 @@
 				立即购买
 			</button>
 		</div>
+		<div id = "verifyDiv" style="display: none; height: 35px" class="form-actions">
+			<img src=""/>
+			<input type="text" id="verifyContent"  style="width: 140px; height: 35px" value=""/>
+			<button class="btn blue" id="verify" type="submit" style="float: right">
+				验证
+			</button>
+		</div>
 	</div>
 </body>
 
@@ -93,32 +100,26 @@
 			}
 		});
 
-
-		$("#createOrder").on("click", function() {
+		$("#verify").on("click", function () {
 			var token = window.localStorage["token"];
-			if (token == null) {
-				alert("没有登录，不能下单");
-				window.location.href="login.html";
-				return false;
-			}
-
 			$.ajax({
 				type: "POST",
-				url: "http://"+g_host+"/order/generatetoken?token="+token,
+				url: "http://" + g_host + "/order/generatetoken?token=" + token,
 				contentType: "application/x-www-form-urlencoded",
 				data: {
 					"itemId": g_itemVO.id,
 					"promoId": g_itemVO.promoId,
+					"verifyCode": $("#verifyContent").val()
 				},
-				xhrFields:{
-					withCredentials:true
+				xhrFields: {
+					withCredentials: true
 				},
-				success: function(data) {
+				success: function (data) {
 					if (data.status === "success") {
 						var promoToken = data.data;
 						$.ajax({
 							type: "POST",
-							url: "http://"+g_host+"/order/createorder?token="+token,
+							url: "http://" + g_host + "/order/createorder?token=" + token,
 							contentType: "application/x-www-form-urlencoded",
 							data: {
 								"itemId": g_itemVO.id,
@@ -126,37 +127,103 @@
 								"amount": 1,
 								"promoToken": promoToken,
 							},
-							xhrFields:{
-								withCredentials:true
+							xhrFields: {
+								withCredentials: true
 							},
-							success: function(data) {
+							success: function (data) {
 								if (data.status === "success") {
 									alert("下单成功");
 									window.location.reload();
 								} else {
 									alert("下单失败，原因为" + data.data.errMsg + data.data.errCode);
 									if (data.data.errCode === 20003) {
-										window.location.href="login.html";
+										window.location.href = "login.html";
 									}
 								}
 							},
-							error: function(data) {
+							error: function (data) {
 								alert("下单失败，原因为" + data.responseText);
 							}
 						});
 					} else {
 						alert("获取令牌失败，原因为" + data.data.errMsg + data.data.errCode);
 						if (data.data.errCode === 20003) {
-							window.location.href="login.html";
+							window.location.href = "login.html";
 						}
 					}
 				},
-				error: function(data) {
+				error: function (data) {
 					alert("获取令牌失败，原因为" + data.responseText);
 				}
 			});
 		});
 
+		$("#createOrder").on("click", function () {
+			var token = window.localStorage["token"];
+			if (token == null) {
+				alert("没有登录，不能下单");
+				window.location.href = "login.html";
+				return false;
+			}
+			if (g_itemVO.promoId != null) {
+				$("#verifyDiv img").attr("src", "http://" + g_host + "/order/generateverifycode?token=" + token);
+				$("#verifyDiv").show();
+			} else {
+				$.ajax({
+					type: "POST",
+					url: "http://"+g_host+"/order/generatetoken?token="+token,
+					contentType: "application/x-www-form-urlencoded",
+					data: {
+						"itemId": g_itemVO.id,
+						"promoId": g_itemVO.promoId,
+					},
+					xhrFields:{
+						withCredentials:true
+					},
+					success: function(data) {
+						if (data.status === "success") {
+							var promoToken = data.data;
+							$.ajax({
+								type: "POST",
+								url: "http://"+g_host+"/order/createorder?token="+token,
+								contentType: "application/x-www-form-urlencoded",
+								data: {
+									"itemId": g_itemVO.id,
+									"promoId": g_itemVO.promoId,
+									"amount": 1,
+									"promoToken": promoToken,
+								},
+								xhrFields:{
+									withCredentials:true
+								},
+								success: function(data) {
+									if (data.status === "success") {
+										alert("下单成功");
+										window.location.reload();
+									} else {
+										alert("下单失败，原因为" + data.data.errMsg + data.data.errCode);
+										if (data.data.errCode === 20003) {
+											window.location.href="login.html";
+										}
+									}
+								},
+								error: function(data) {
+									alert("下单失败，原因为" + data.responseText);
+								}
+							});
+						} else {
+							alert("获取令牌失败，原因为" + data.data.errMsg + data.data.errCode);
+							if (data.data.errCode === 20003) {
+								window.location.href="login.html";
+							}
+						}
+					},
+					error: function(data) {
+						alert("获取令牌失败，原因为" + data.responseText);
+					}
+				});
+			}
+		});
 	});
 
 	function reloadDom() {
