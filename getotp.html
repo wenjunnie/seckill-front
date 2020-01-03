@@ -44,14 +44,14 @@
                 xhrFields:{withCredentials:true},
                 success:function (data) {
                     if (data.status === "success") {
-                        alert("opt短信发送成功");
+                        alert("短信发送成功");
                         window.location.href="register.html";
                     }else {
-                        alert("opt短信发送失败，原因是"+data.data.errMsg);
+                        alert("短信发送失败，原因是"+data.data.errMsg);
                     }
                 },
                 error:function (data) {
-                    alert("opt短信发送失败"+data.responseText);
+                    alert("短信发送失败"+data.responseText);
                 }
             })
         });

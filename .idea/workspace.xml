@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ea2f1724-6439-4b36-97c8-0faeca8b2d46" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getitem.html" beforeDir="false" afterPath="$PROJECT_DIR$/getitem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getotp.html" beforeDir="false" afterPath="$PROJECT_DIR$/getotp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +15,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1VSnFnGnApRAMTP9o7ORbEFhEMm" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -26,12 +29,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\JetBrains\WebstormProjects\seckill-front" />
       <recent name="D:\JetBrains\WebstormProjects\seckill-front\static" />
       <recent name="D:\JetBrains\WebstormProjects\seckill-front\html" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JetBrains\WebstormProjects\seckill-front" />
       <recent name="D:\JetBrains\WebstormProjects\seckill-front\static" />
       <recent name="D:\JetBrains\WebstormProjects\seckill-front\html" />
     </key>
@@ -83,7 +87,8 @@
       <workItem from="1577761549352" duration="3005000" />
       <workItem from="1577779160859" duration="2304000" />
       <workItem from="1577863506836" duration="5524000" />
-      <workItem from="1577896450073" duration="4436000" />
+      <workItem from="1577896450073" duration="5747000" />
+      <workItem from="1577967428737" duration="5877000" />
     </task>
     <servers />
   </component>
