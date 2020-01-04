@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ea2f1724-6439-4b36-97c8-0faeca8b2d46" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/creatitem.html" beforeDir="false" afterPath="$PROJECT_DIR$/createitem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/findpassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/findpassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getitem.html" beforeDir="false" afterPath="$PROJECT_DIR$/getitem.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/getotp.html" beforeDir="false" afterPath="$PROJECT_DIR$/getotp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/listitem.html" beforeDir="false" afterPath="$PROJECT_DIR$/listitem.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +94,10 @@
       <workItem from="1577863506836" duration="5524000" />
       <workItem from="1577896450073" duration="5747000" />
       <workItem from="1577967428737" duration="5877000" />
+      <workItem from="1578041433830" duration="2763000" />
+      <workItem from="1578063754915" duration="717000" />
+      <workItem from="1578135291985" duration="10680000" />
+      <workItem from="1578148172913" duration="40000" />
     </task>
     <servers />
   </component>
@@ -165,5 +174,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1073" height="322" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1577870269237" />
+    <state x="447" y="145" width="642" height="534" key="find.popup" timestamp="1578145902426">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="447" y="145" width="642" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1578145902426" />
   </component>
 </project>

@@ -11,7 +11,7 @@
 </head>
 <body class="login">
 	<div class="content">
-		<h3 class="form-title">商品详情</h3>
+		<h3 class="form-title" style="text-align: center">商品详情</h3>
 		<div id="promoStartDateContainer" class="form-group">
 			<label style="color:blue" id="promoStatus" class="control-label"></label>
 			<div>
@@ -58,14 +58,14 @@
 				<label class="control-label" id="sales"></label>
 			</div>
 		</div>
-		<div class="form-actions">
+		<div class="form-actions" style="text-align: right">
 			<button class="btn blue" id="createOrder" type="submit">
 				立即购买
 			</button>
 		</div>
-		<div id = "verifyDiv" style="display: none; height: 35px" class="form-actions">
-			<img src=""/>
-			<input type="text" id="verifyContent"  style="width: 140px; height: 35px" value=""/>
+		<div id = "verifyDiv" style="display: none; text-align: right; height: 35px" class="form-actions">
+			<img src="" style="margin-right: 10px"/>
+			<input type="text" id="verifyContent"  style="width: 140px; height: 35px; margin-right: 10px" value=""/>
 			<button class="btn blue" id="verify" type="submit" style="float: right">
 				验证
 			</button>
@@ -75,6 +75,7 @@
 
 <script>
 	var g_itemVO = {};
+	var g_path;
 	$(document).ready(function() {
 		// 获取商品详情
 		$.ajax({
@@ -104,7 +105,7 @@
 			var token = window.localStorage["token"];
 			$.ajax({
 				type: "POST",
-				url: "http://" + g_host + "/order/generatetoken?token=" + token,
+				url: "http://"+g_host+"/order/generatetoken?token=" + token,
 				contentType: "application/x-www-form-urlencoded",
 				data: {
 					"itemId": g_itemVO.id,
@@ -119,7 +120,7 @@
 						var promoToken = data.data;
 						$.ajax({
 							type: "POST",
-							url: "http://" + g_host + "/order/createorder?token=" + token,
+							url: "http://"+g_host+"/order/"+g_path+"/createorder?token=" + token,
 							contentType: "application/x-www-form-urlencoded",
 							data: {
 								"itemId": g_itemVO.id,
@@ -165,61 +166,60 @@
 				window.location.href = "login.html";
 				return false;
 			}
+			$.ajax({
+				async: false,
+				type: "GET",
+				url: "http://"+g_host+"/order/path?token=" + token,
+				contentType: "application/x-www-form-urlencoded",
+				data: {
+					"itemId": g_itemVO.id,
+				},
+				xhrFields: {
+					withCredentials: true
+				},
+				success: function (data) {
+					if (data.status === "success") {
+						g_path = data.data;
+					} else {
+						alert("下单失败，原因为" + data.data.errMsg + data.data.errCode);
+						if (data.data.errCode === 20003) {
+							window.location.href = "login.html";
+						}
+					}
+				},
+				error: function (data) {
+					alert("下单失败，原因为" + data.responseText);
+				}
+			});
 			if (g_itemVO.promoId != null) {
 				$("#verifyDiv img").attr("src", "http://" + g_host + "/order/generateverifycode?token=" + token);
 				$("#verifyDiv").show();
 			} else {
 				$.ajax({
 					type: "POST",
-					url: "http://"+g_host+"/order/generatetoken?token="+token,
+					url: "http://"+g_host+"/order/"+g_path+"/createorder?token="+token,
 					contentType: "application/x-www-form-urlencoded",
 					data: {
 						"itemId": g_itemVO.id,
 						"promoId": g_itemVO.promoId,
+						"amount": 1,
 					},
 					xhrFields:{
 						withCredentials:true
 					},
 					success: function(data) {
 						if (data.status === "success") {
-							var promoToken = data.data;
-							$.ajax({
-								type: "POST",
-								url: "http://"+g_host+"/order/createorder?token="+token,
-								contentType: "application/x-www-form-urlencoded",
-								data: {
-									"itemId": g_itemVO.id,
-									"promoId": g_itemVO.promoId,
-									"amount": 1,
-									"promoToken": promoToken,
-								},
-								xhrFields:{
-									withCredentials:true
-								},
-								success: function(data) {
-									if (data.status === "success") {
-										alert("下单成功");
-										window.location.reload();
-									} else {
-										alert("下单失败，原因为" + data.data.errMsg + data.data.errCode);
-										if (data.data.errCode === 20003) {
-											window.location.href="login.html";
-										}
-									}
-								},
-								error: function(data) {
-									alert("下单失败，原因为" + data.responseText);
-								}
-							});
+							alert("下单成功");
+							window.location.reload();
 						} else {
-							alert("获取令牌失败，原因为" + data.data.errMsg + data.data.errCode);
+							alert("下单失败，原因为" + data.data.errMsg + data.data.errCode);
 							if (data.data.errCode === 20003) {
 								window.location.href="login.html";
 							}
 						}
 					},
 					error: function(data) {
-						alert("获取令牌失败，原因为" + data.responseText);
+						alert("下单失败，原因为" + data.responseText);
 					}
 				});
 			}

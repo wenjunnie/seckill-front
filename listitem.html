@@ -11,7 +11,12 @@
 </head>
 <body>
 	<div class="content">
-		<h3 class="form-title" style="text-align: center">商品列表浏览</h3>
+		<div>
+			<h3 class="form-title" style="text-align: center">商品列表浏览</h3>
+			<button class="btn blue" id="createItem" type="submit" style="float: right; margin-right: 30px">
+				创建商品
+			</button>
+		</div>
 		<div class="table-responsive">
 			<table class="table">
 				<thead>
@@ -54,6 +59,9 @@
 			error: function(data) {
 				alert("获取商品信息失败，原因为" + data.responseText);
 			}
+		});
+		$("#createItem").on("click", function () {
+			window.location.href="createitem.html";
 		});
 	});
 
